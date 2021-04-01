@@ -1,0 +1,44 @@
+$l1 = @('               
+                                                                                           /|      __
+    ██▀███  ▓█████ ▓█████▄  ██▀███   ▄▄▄       ▄▄▄▄    ▄▄▄▄    ██▓▄▄▄█████▓               / |    /  /
+ ▓██ ▒ ██▒▓█   ▀ ▒██▀ ██▌▓██ ▒ ██▒▒████▄    ▓█████▄ ▓█████▄ ▓██▒▓  ██▒ ▓▒                Y  |  //  /
+ ▓██ ░▄█ ▒▒███   ░██   █▌▓██ ░▄█ ▒▒██  ▀█▄  ▒██▒ ▄██▒██▒ ▄██▒██▒▒ ▓██░ ▒░                |  | /( .^   
+ ▒██▀▀█▄  ▒▓█  ▄ ░▓█▄   ▌▒██▀▀█▄  ░██▄▄▄▄██ ▒██░█▀  ▒██░█▀  ░██░░ ▓██▓ ░                 >-"~"-v"
+ ░██▓ ▒██▒░▒████▒░▒████▓ ░██▓ ▒██▒ ▓█   ▓██▒░▓█  ▀█▓░▓█  ▀█▓░██░  ▒██▒ ░               /       Y
+ ░ ▒▓ ░▒▓░░░ ▒░ ░ ▒▒▓  ▒ ░ ▒▓ ░▒▓░ ▒▒   ▓▒█░░▒▓███▀▒░▒▓███▀▒░▓    ▒ ░░                / X <    |
+ ░▒ ░ ▒░ ░ ░  ░ ░ ▒  ▒   ░▒ ░ ▒░  ▒   ▒▒ ░▒░▒   ░ ▒░▒   ░  ▒ ░    ░                  ( ~T~     j
+  ░░   ░    ░    ░ ░  ░   ░░   ░   ░   ▒    ░    ░  ░    ░  ▒ ░  ░                    >._-'' _./
+   ░        ░  ░   ░       ░           ░  ░ ░       ░       ░                       /   "~"  |
+                 ░                               ░       ░                          Y     _,  |
+                                                                                   /| ;-"~ _  l
+                                                                                 / l/ ,-"~    \
+   Creator: https://securethelogs.com / @securethelogs                            \//\/      .- \
+                                                                                   l  RR! /    Y 
+                                                                                   /      I     !
+                                                                                   \      _\    /"\
+                                                                                 (" ~----( ~   Y.  ))')
+
+
+$l1; 
+
+
+# Section 1
+
+$h = hostname
+$u = $env:UserName
+$d = (Get-WmiObject -Class Win32_ComputerSystem).Domain
+
+$sesh = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+
+
+if ($sesh -eq "True"){
+
+    $sessionadmin = "Admin Session"
+    $tc = "Green"
+
+    } else {
+
+           $sessionadmin = "User Session"
+           $tc = "Red"
+
+           }
